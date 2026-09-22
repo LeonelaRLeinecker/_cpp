@@ -112,7 +112,7 @@ void PhoneBook::_displayTable() const {
 void PhoneBook::searchContact() {
 	if (this->_count == 0) {
 		std::cout << "The PhoneBook is empty. Please create the contact whith command ADD.";
-		std::cout << "---------------------------------------------";
+		std::cout << "\n---------------------------------------------";
 		std::cout << std::endl;
 		return;
 	}
