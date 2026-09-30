@@ -1,7 +1,8 @@
-NAME = sed
+NAME = harl2.0
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp \
+	Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
