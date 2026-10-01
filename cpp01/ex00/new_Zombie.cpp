@@ -8,5 +8,4 @@ Zombie* newZombie(std::string name) {
 
     // devuelve el puntero al zombie de la heap
     return(zombieHeap);
-       
 }

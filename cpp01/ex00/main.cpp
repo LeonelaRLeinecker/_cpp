@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-    if (argc > 1)
+    if (argc == 2)
     {
         std::cout << "type a name for your Zombie: " << std::endl; 
         std::string name = argv[1];
