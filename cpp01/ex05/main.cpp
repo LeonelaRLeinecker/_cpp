@@ -6,11 +6,29 @@ int main(int argc, char **argv) {
 	if (argc != 2)
 	{
 		std::cerr << "you must enter type level\n" << std::endl;
+		std::cerr << "choice one of those options:\n"
+		<< "DEBUG,\n"
+		<< "INFO,\n"
+		<< "WARNING,\n"
+		<< "ERROR" << std::endl; 
 		return 1;
 	}
+	
 	std::string level = argv[1];
-	harl.complain(level);
-
+	if (level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR")
+	{
+		harl.complain(level);
+	}
+	else
+	{
+		std::cerr << "choice one of those options:\n"
+		<< "DEBUG,\n"
+		<< "INFO,\n"
+		<< "WARNING,\n"
+		<< "ERROR" << std::endl; 
+		return 1;
+	}
+	
     // std::cout << "--- testing DEBUG ---" << std::endl;
     // harl.complain("DEBUG");
 
