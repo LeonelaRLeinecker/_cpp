@@ -65,7 +65,7 @@ bool Fixed::operator>=(const Fixed &other) const {
 	return this->_fixedPointValue >= _fixedPointValue;
 }
 
-bool Fixed::operator>=(const Fixed &other) const {
+bool Fixed::operator<=(const Fixed &other) const {
 	return this->_fixedPointValue <= other._fixedPointValue;
 }
 
@@ -82,11 +82,35 @@ Fixed Fixed::operator+(const Fixed &other) const {
 	return Fixed(this->toFloat() + other.toFloat());
 }
 Fixed Fixed::operator-(const Fixed &other) const {
-	return Fixed(this->toFloat() + other.toFloat());
+	return Fixed(this->toFloat() - other.toFloat());
 }
 Fixed Fixed::operator*(const Fixed &other) const {
 	return Fixed(this->toFloat() * other.toFloat());
 }
 Fixed Fixed::operator/(const Fixed &other) const {
 	return Fixed(this->toFloat() / other.toFloat());
+}
+
+//pre-incremento (++a)
+Fixed &Fixed::operator++(void) {
+	this->_fixedPointValue++; //incremente el valor crudo en 1
+	return *this; //devuelve el objeto actualizado por referencia
+}
+
+//post-incremento (a++)
+Fixed Fixed::operator++(int) {
+	Fixed temp(*this); //guarda copia del estado actual
+	this->_fixedPointValue++; //incremente valor actual
+	return temp; //devuelve copia con old value
+}
+//pre-decremento (--a)
+Fixed &Fixed::operator--(void) {
+	this->_fixedPointValue--; //decrementa el valor crudo
+	return *this; //devuelve el objeto actualizado por referencia
+}
+//post-decremento (a--)
+Fixed Fixed::operator--(int) {
+	Fixed temp(*this); //guarda copia del estado actual
+	this->_fixedPointValue--;//actualiza valor
+	return temp; //devuelve old value;
 }

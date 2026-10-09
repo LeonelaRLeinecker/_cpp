@@ -40,6 +40,22 @@ class Fixed {
 		Fixed operator-(const Fixed &other) const;
 		Fixed operator*(const Fixed &other) const;
 		Fixed operator/(const Fixed &other) const;
+
+		//pre-incremento (++a)
+		Fixed &operator++(void);
+		//post-incremento (a++)
+		Fixed operator++(int);
+		//pre-decremento (--a)
+		Fixed &operator--(void);
+		//post-decremento (a--)
+		Fixed operator--(int);
+
+		//sobrecarga min y max
+		static Fixed &min(Fixed &a, Fixed &b);
+		static const Fixed &min(const Fixed &a, const Fixed &b);
+		static Fixed &max(Fixed &a, Fixed &b);
+		static const Fixed &max(const Fixed &a, const Fixed &b);
+
 };
 
 //sobrecarga del operador:
