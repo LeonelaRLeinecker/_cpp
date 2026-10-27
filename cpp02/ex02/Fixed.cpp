@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+//BORRAR MENSAJES DE CALLED
 
 Fixed::Fixed(void) :_fixedPointValue(0) {
 	std::cout << "Default constructor called" << std::endl;
@@ -62,7 +63,7 @@ bool Fixed::operator<(const Fixed &other) const {
 }
 
 bool Fixed::operator>=(const Fixed &other) const {
-	return this->_fixedPointValue >= _fixedPointValue;
+	return this->_fixedPointValue >= other._fixedPointValue;
 }
 
 bool Fixed::operator<=(const Fixed &other) const {
@@ -113,4 +114,19 @@ Fixed Fixed::operator--(int) {
 	Fixed temp(*this); //guarda copia del estado actual
 	this->_fixedPointValue--;//actualiza valor
 	return temp; //devuelve old value;
+}
+
+//operadores min/max
+//notacion ternaria if:else (condicion) ? valor_si_true : valor_si_false
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+	return (a < b) ? a : b;
+}
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+	return (a < b) ? a : b;
+}
+Fixed  &Fixed::max(Fixed &a, Fixed &b) {
+	return (a > b) ? a : b;
+}
+const Fixed &Fixed::max( const Fixed &a, const Fixed &b) {
+	return (a > b) ? a : b;
 }
