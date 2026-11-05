@@ -4,10 +4,10 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "ScavTrap defoult cosntructor called" << std::endl;
+	std::cout << "ScavTrap defoult constructor called" << std::endl;
 }
 
-//cosntructor parametrizado utiliza ClapTrap(name)
+//constructor parametrizado utiliza ClapTrap(name)
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 50;
@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	<< _name << std::endl;
 }
 
-//cosntructor de copia, llama a la copia de claptrap
+//constructor de copia, llama a la copia de claptrap
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
 	std::cout << "ScavTrap copy constructor calledd for "
 	<< _name << std::endl;

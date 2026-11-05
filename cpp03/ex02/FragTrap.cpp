@@ -13,7 +13,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	std::cout << "FragTrap parametizer cosntructor called for "
+	std::cout << "FragTrap parametizer constructor called for "
 	<< _name << std::endl;
 }
 //copy
