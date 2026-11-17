@@ -2,16 +2,16 @@
 //BORRAR MENSAJES DE CALLED
 
 Fixed::Fixed(void) :_fixedPointValue(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 Fixed::Fixed(const Fixed &other) {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 //constructor desde int
 Fixed::Fixed(const int param) {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	this->_fixedPointValue = param << _fractionalBits;
 }
 //constructor desde float

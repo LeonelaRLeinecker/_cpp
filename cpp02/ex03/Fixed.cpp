@@ -2,33 +2,33 @@
 //BORRAR MENSAJES DE CALLED
 
 Fixed::Fixed(void) :_fixedPointValue(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 Fixed::Fixed(const Fixed &other) {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 //constructor desde int
 Fixed::Fixed(const int param) {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	this->_fixedPointValue = param << _fractionalBits;
 }
 //constructor desde float
 Fixed::Fixed(const float param) {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	this->_fixedPointValue = roundf(param * (1 << _fractionalBits));
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
-	std::cout << "Coppy assignment operator called" << std::endl;
+	//std::cout << "Coppy assignment operator called" << std::endl;
 	if (this != &other) {
 		this->_fixedPointValue = other.getRawBits();
 	}
 	return (*this);
 }
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 //convertir a float 
 float Fixed::toFloat(void) const {
@@ -41,7 +41,7 @@ int Fixed::toInt(void) const {
 }
 //getter
 int Fixed::getRawBits(void) const {
-	std::cout << "---getRawBits called---" << std::endl;
+	//std::cout << "---getRawBits called---" << std::endl;
 	return this->_fixedPointValue;
 }
 //setter
