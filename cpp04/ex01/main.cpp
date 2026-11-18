@@ -17,17 +17,35 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
-	// testing WrongAnimal y WrongCat
-	std::cout << "\n--- PRUEBAS WRONG ---" << std::endl;
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
+	//testing arrays
 
-	std::cout << wrongCat->getType() << " " << std::endl;
-	wrongCat->makeSound(); // Debería imprimir el sonido de WrongAnimal, ¡no el de WrongCat!
-	wrongMeta->makeSound();
+	std::cout << "\n=== TEST ARRAYS ANIMAL ===" << std::endl;
+	int size = 6;
+	Animal* animals[size];
 
-	delete wrongMeta;
-	delete wrongCat;
+	//creamos bucle para crear animales y gatos
+	for (int idx = 0; idx < size; idx++) {
+		if (idx < size / 2)
+			animals[idx] = new Dog();
+		else
+			animals[idx] = new Cat();
+	}
+
+	std::cout << "\n--- delete all array ---" << std::endl;
+
+	for (int idx = 0; idx < size; idx++) {
+		delete animals[idx];
+	}
+
+	std::cout << "\n=== deep copy ===" << std::endl;
+
+	Dog originalDog;
+	{
+		Dog copyDog = originalDog; // ejecuta constructor copia
+		//copyDog muere aqui y borra su propio Brain.
+		//pero originalDog sigue intacto y seguro
+
+	}
 
 	delete meta;
 	delete j;//should not create a leak

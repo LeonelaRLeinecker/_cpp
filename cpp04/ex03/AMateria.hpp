@@ -1,0 +1,27 @@
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
+# include <string>
+# include <iostream>
+
+class ICharacter;
+class AMateria {
+	protected: 
+	std::string type;
+
+	public:
+
+	AMateria(std::string const & type);
+	AMateria(const AMateria &other);
+	AMateria &operator=(const AMateria &other);
+	virtual ~AMateria();
+	
+	std::string const & getType() const; // devuelve el tipo de materia
+	
+	virtual AMateria* clone() const = 0; //funcion virtual pura y convierte e AMateria en abstracta
+	virtual void use(ICharacter& target); // metodo virtual con implementacion base
+
+
+};
+
+
+#endif

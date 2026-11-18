@@ -1,4 +1,4 @@
-NAME = ./animal
+NAME = ./brain
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp \
@@ -6,7 +6,8 @@ SRC = main.cpp \
 	Dog.cpp \
 	Cat.cpp \
 	WrongAnimal.cpp \
-	WrongCat.cpp
+	WrongCat.cpp \
+	Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
