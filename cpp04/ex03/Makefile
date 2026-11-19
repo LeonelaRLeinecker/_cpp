@@ -1,10 +1,8 @@
-NAME = ./clapTrap
+NAME = ./amateria
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp \
-	ClapTrap.cpp \
-	ScavTrap.cpp \
-	FragTrap.cpp
+	AMateria.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
@@ -18,3 +16,4 @@ fclean: clean
 		rm -f $(NAME)
 re: fclean all
 .PHONY: all clean fclean re
+
